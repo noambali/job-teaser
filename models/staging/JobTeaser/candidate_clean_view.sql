@@ -1,7 +1,7 @@
 WITH ls AS (
 SELECT * 
 ,ROW_NUMBER()OVER(PARTITION BY user_id, shortlist_id ORDER BY receive_time DESC) AS last_status
-FROM {{source("JobTeaser","candidate_status")}}
+FROM {{ ref('stg_JobTeaser__candidate_status') }}
 )
 SELECT *
 FROM ls
