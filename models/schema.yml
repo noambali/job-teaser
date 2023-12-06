@@ -21,7 +21,6 @@ sources:
             description: student's school ID 
           - name: current_sign_in_at
             description: Last time student connected on the platform 
-
       - name: dim_schools
         description: students schools and country details
         columns:
@@ -37,7 +36,6 @@ sources:
           description:
         - name: jt_school_type
           description: type of school
-
       - name: optin
         identifier: optin
         columns:
@@ -55,24 +53,19 @@ sources:
           description: last student connection date
         - name: resume_uploaded
           description: The student has uploaded his CV on JT
-      - name: optin_cleaned_view 
-        description: we kept the last status row per user_id 
-      
-      - name: candidate_clean_view
-        description: we kept the last status row per user_id and shortliste_id
-
-      - name: optin_candidate_merged
-        description: joined the tables optin_cleaned_view, candidate_clen_view and dim_schools. Primary key is user_id
-          
-      - name: funnel_status
-        description: from the optin_candidate_merged, we created categories for shorlisted user id, status update and school types
-      
-      - name: funnel_status_column
-        description: merged the colunms user_id, jt_country, jt_school_type, is_cc, jt_school_type_name, approved_colnum , optin_cause and opt_receveived_name using UNION ALL to create a table that allowed us to have all the categories status without having missing data. 
-
-      - name: maximize_shortlists
-        description: table that showed the amount of shortliste we have per student
-
-      - name: shortlisted_by_schooltype
-        description: subquery with the table funnel_status_column              
+models:
+  - name: optin_cleaned_view 
+    description: we kept the last status row per user_id 
+  - name: candidate_clean_view
+    description: we kept the last status row per user_id and shortliste_id
+  - name: optin_candidate_merged
+    description: joined the tables optin_cleaned_view, candidate_clen_view and dim_schools. Primary key is user_id
+  - name: funnel_status
+    description: from the optin_candidate_merged, we created categories for shorlisted user id, status update and school types
+  - name: funnel_status_column
+    description: merged the colunms user_id, jt_country, jt_school_type, is_cc, jt_school_type_name, approved_colnum , optin_cause and opt_receveived_name using UNION ALL to create a table that allowed us to have all the categories status without having missing data. 
+  - name: maximize_shortlists
+    description: table that showed the amount of shortliste we have per student
+  - name: shortlisted_by_schooltype
+    description: subquery with the table funnel_status_column              
      
