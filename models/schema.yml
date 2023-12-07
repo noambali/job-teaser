@@ -1,5 +1,6 @@
 version: 2
 
+<<<<<<< HEAD
 sources:
   - name: JobTeaser
     schema: JobTeaser
@@ -68,3 +69,8 @@ models:
     description: table that showed the amount of shortliste we have per student
   - name: shortlisted_by_schooltype
     description: subquery with the table funnel_status_column
+=======
+models:
+
+     
+>>>>>>> 2bb27dca233aeeb38b49eb232ca1b40f763d8c9c

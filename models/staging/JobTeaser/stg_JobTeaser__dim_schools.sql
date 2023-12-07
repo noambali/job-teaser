@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('JobTeaser', 'dim_schools') }}
+    select * from `JobTeaser.dim_schools`
 
 ),
 

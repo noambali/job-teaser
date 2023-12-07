@@ -2,7 +2,7 @@ with
 
 source as (
 
-    select * from {{ source('JobTeaser', 'optin') }}
+    select * from `JobTeaser.optin`
 
 ),
 
